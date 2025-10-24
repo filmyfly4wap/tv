@@ -1,0 +1,223 @@
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    body {
+      background: #000;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #fff;
+      overflow-x: hidden
+    }
+
+    /* Fixed player */
+    .player-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      background: #0b0b0b;
+      z-index: 999;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04)
+    }
+
+    .player-box {
+      max-width: 980px;
+      margin: 0 auto;
+      width: 100%;
+      height: 56.25vw;
+      max-height: 550px;
+      background: #000
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block
+    }
+
+    /* Overview */
+    .player-overview {
+      border-top: 2px solid #2962ff;
+      box-shadow: 0 4px 12px #555;
+      max-width: 980px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 12px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, .02), rgba(255, 255, 255, .01));
+      gap: 10px
+    }
+
+    .overview-left {
+      display: flex;
+      align-items: center;
+      gap: 10px
+    }
+
+    .overview-logo img {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      object-fit: contain;
+      background: #fff
+    }
+
+    .overview-details .titlee {
+      font-weight: 700;
+      font-size: 16px;
+      color: #fff
+    }
+
+    .overview-details .metaa {
+      color: #bdbdbd;
+      font-size: 13px;
+      margin-top: 4px
+    }
+
+    /* Live badge */
+    .live-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px ;
+      border-radius: 3px;
+      background: linear-gradient(135deg, #ff0033, #cc0033);
+      box-shadow: 0 6px 18px rgba(255, 0, 51, .18);
+      font-weight: 700;
+      font-size: 13px;
+      color: #fff;
+      animation: pulse 2s infinite;
+      min-width: 88px;
+      justify-content: center
+    }
+
+    .live-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #fff;
+      animation: blink 1.5s infinite
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(255, 0, 51, .7)
+      }
+
+      70% {
+        box-shadow: 0 0 0 10px rgba(255, 0, 51, 0)
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 0, 51, 0)
+      }
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: .4
+      }
+    }
+
+    main {
+      padding-top: calc(56.25vw + 110px)
+    }
+
+    /* Scroll Row */
+    .scroll-row {
+      background: #000;
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      padding: 18px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      width: 100%;
+      box-sizing: border-box
+    }
+
+    .scroll-row::-webkit-scrollbar {
+      height: 6px
+    }
+
+    .scroll-row::-webkit-scrollbar-thumb {
+      background: #2962ff;
+      border-radius: 6px
+    }
+
+    /* Cards */
+    .tvcat {
+      flex: 0 0 auto;
+      width: 100px;
+      min-width: 100px;
+      height: 190px;
+      background: #161616;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform .15s ease, box-shadow .15s ease
+    }
+
+    .tvcat:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 8px #2962ff
+    }
+
+    .tvcat:active {
+      border: 2px solid #2962ff;
+      transform: translateY(1px)
+    }
+
+    .tvcat img {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: #fff;
+      display: block;
+      margin: 0 auto 16px
+    }
+
+    .tvcat .name {
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      margin-top: 30px
+    }
+
+    .header22 {
+      max-width: 980px;
+      margin: 10px 0;
+      padding: 10px 15px;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      border-left: 4px solid #2962ff;
+      border-radius: 0 0 0 20px;
+      background: #111;
+      text-transform: uppercase
+    }
+
+    @media(max-width:700px) {
+      .overview-logo img {
+        width: 40px;
+        height: 40px
+      }
+
+      .overview-details .titlee {
+        font-size: 14px
+      }
+    }
